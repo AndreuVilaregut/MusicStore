@@ -1,0 +1,12 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gradient circular -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:centerColor="#3E4A55"
+                android:endColor="#FFFFFF"
+                android:gradientRadius="200dp"
+                android:type="radial" />
+        </shape>
+    </item>
+</layer-list>

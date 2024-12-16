@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fons del ProgressBar (blanc) -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="#FFFFFF" /> <!-- Color blanc -->
+            <corners android:radius="8dp" /> <!-- Arrodonir les cantonades -->
+        </shape>
+    </item>
+    <!-- Color del progrés (blau) -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="#2196F3" /> <!-- Color blau -->
+                <corners android:radius="8dp" /> <!-- Arrodonir les cantonades -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

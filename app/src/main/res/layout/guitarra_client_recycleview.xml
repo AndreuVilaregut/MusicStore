@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/redounded_background"
+    android:elevation="8dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/guitarra_image"
+        android:background="@drawable/rounded_image"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/imatge_corporativa"
+        android:contentDescription="Guitar image" />
+
+    <TextView
+        android:id="@+id/guitarra_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-black"
+        android:text="Guitarra Name"
+        android:textColor="#F4F4F4"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/guitarra_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="sans-serif-black"
+        android:maxLines="1"
+        android:text="€1000000000"
+        android:textAlignment="textEnd"
+        android:textColor="#FBF4F4"
+        android:textSize="18sp" />
+</LinearLayout>

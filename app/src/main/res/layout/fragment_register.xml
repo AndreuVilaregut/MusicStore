@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E4A55"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="40dp">
+
+        <!-- Imatge -->
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="103dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="103dp"
+            android:src="@drawable/baseline_person_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Input per nom d'usuari -->
+        <FrameLayout
+            android:id="@+id/frameLayoutUsername"
+            android:layout_width="333dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/frame_background"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayoutPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="311dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:hint="Nom d'usuari"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#B0BEC5"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <!-- Input per contrasenya -->
+        <FrameLayout
+            android:id="@+id/frameLayoutPassword"
+            android:layout_width="333dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/frame_background"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayoutConfirmPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="Contrasenya"
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#B0BEC5"
+                android:textSize="16sp" />
+
+        </FrameLayout>
+
+        <!-- Input per confirmar contrasenya -->
+        <FrameLayout
+            android:id="@+id/frameLayoutConfirmPassword"
+            android:layout_width="333dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/frame_background"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/registerButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="Confirmar contrasenya"
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#B0BEC5"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <!-- Botó de registre -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="304dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="51dp"
+            android:layout_marginEnd="51dp"
+            android:layout_marginBottom="76dp"
+            android:background="@drawable/button_background"
+            android:elevation="8dp"
+            android:text="Registrar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="118dp"
+            android:layout_marginEnd="117dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="sans-serif-black"
+            android:text="REGISTRAR-SE"
+            android:textColor="#F2F2F2"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayoutUsername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <CheckBox
+            android:id="@+id/treballador"
+            android:layout_width="117dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            android:text="Treballador"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

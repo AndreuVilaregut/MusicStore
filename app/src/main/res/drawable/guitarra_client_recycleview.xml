@@ -1,0 +1,38 @@
+<!-- client_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recyclViewClient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="#4F5B62"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/guitarra_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/imatge_corporativa" />
+
+    <TextView
+        android:id="@+id/guitarra_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Guitarra Name"
+        android:textColor="#F4F4F4"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/guitarra_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="150dp"
+        android:fontFamily="sans-serif-black"
+        android:text="€1000"
+        android:textColor="#FBF4F4"
+        android:textSize="16sp" />
+</LinearLayout>
