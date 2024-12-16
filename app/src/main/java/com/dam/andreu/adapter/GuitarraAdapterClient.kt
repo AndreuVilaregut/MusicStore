@@ -60,7 +60,6 @@ class GuitarraAdapterClient(
 
     override fun getItemCount(): Int = guitarres.size
 
-    // Mètode per obtenir una guitarra donada la seva posició
     fun getGuitarra(position: Int): Guitarra? {
         return if (position in guitarres.indices) guitarres[position] else null
     }
