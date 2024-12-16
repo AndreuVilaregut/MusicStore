@@ -15,7 +15,7 @@ import com.dam.andreu.ui.client.DetallsGuitarra
 
 class GuitarraAdapterClient(
     private val context: Context,
-    private val guitarres: MutableList<Guitarra> // MutableList per permetre modificacions
+    private val guitarres: MutableList<Guitarra>
 ) : RecyclerView.Adapter<GuitarraAdapterClient.GuitarraViewHolder>() {
 
     inner class GuitarraViewHolder(view: View) : RecyclerView.ViewHolder(view) {
