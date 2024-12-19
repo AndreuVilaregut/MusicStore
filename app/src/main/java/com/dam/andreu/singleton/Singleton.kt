@@ -11,7 +11,6 @@ class AppSingleton private constructor() {
 
     private lateinit var user: User
 
-    // Llista de guitarres gestionada pel singleton
     private val guitarres = mutableListOf<Guitarra>()
     private var lastIdGuitarra = 0
 
@@ -19,7 +18,6 @@ class AppSingleton private constructor() {
         @Volatile
         private var instance: AppSingleton? = null
 
-        // Obtenim la instància singleton
         fun getInstance(): AppSingleton {
             return instance ?: synchronized(this) {
                 instance ?: AppSingleton().also { instance = it }
@@ -50,7 +48,6 @@ class AppSingleton private constructor() {
 
     // --------------------- Gestió de Guitarres ---------------------
 
-    // Afegir una guitarra al singleton
     fun addGuitarra(guitarra: Guitarra, context: Context) {
         val novaGuitarra = guitarra.copy(id = ++lastIdGuitarra)
         guitarres.add(novaGuitarra)
@@ -78,17 +75,14 @@ class AppSingleton private constructor() {
         }
     }
 
-    // Obtenir totes les guitarres
     fun getAllGuitarres(): List<Guitarra> = guitarres
 
-    // Carregar les guitarres des del fitxer CSV
     fun loadGuitarresFromCsv(context: Context) {
         guitarres.clear()
         guitarres.addAll(CsvUtilsGuitarra.carregarGuitarres(context))
         lastIdGuitarra = guitarres.maxOfOrNull { it.id } ?: 0
     }
 
-    // Emmagatzemar les guitarres al fitxer CSV
     private fun saveGuitarresToCsv(context: Context) {
         CsvUtilsGuitarra.guardarGuitarres(context, guitarres)
     }

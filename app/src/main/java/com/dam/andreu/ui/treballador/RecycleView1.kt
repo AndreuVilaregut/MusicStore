@@ -30,11 +30,9 @@ class RecycleView1 : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.recylce_view_treballador_activity)
 
-        // Inicialitza el RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.guitarra_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Inicialitza el botó de scanner QR
         val qrButton = findViewById<AppCompatImageButton>(R.id.qrScannerButtonOne)
         qrButton.setOnClickListener {
             val intent = Intent(this, QRScannerActivity1::class.java)
@@ -52,22 +50,18 @@ class RecycleView1 : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // Carregar les guitarres cada cop que tornis a aquesta activitat
         loadGuitarres()
     }
 
     private fun loadGuitarres() {
-        // Obtenir les guitarres des del singleton
         val singleton = AppSingleton.getInstance()
         singleton.loadGuitarresFromCsv(this)
         guitarres = singleton.getAllGuitarres().toMutableList()
 
-        // Configurar l'adaptador per a mostrar les guitarres
         adapter = GuitarraAdapterTreballador(this, guitarres)
         val recyclerView = findViewById<RecyclerView>(R.id.guitarra_recycler_view)
         recyclerView.adapter = adapter
 
-        // Configurar l'ItemTouchHelper per esborrar guitarres amb swipe
         val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             override fun onMove(
                 recyclerView: RecyclerView,
@@ -86,7 +80,7 @@ class RecycleView1 : AppCompatActivity() {
                 guitarra.qrImagePath?.let { qrPath ->
                     val qrFile = File(qrPath)
                     if (qrFile.exists() && qrFile.delete()) {
-                        Toast.makeText(this@RecycleView1, "Codi QR esborrat correctament", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this@RecycleView1, "Codi QR esborrat correctament", Toast.LENGTH_SHORT).show()
                     }
                 }
 

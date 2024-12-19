@@ -36,7 +36,6 @@ class QRScannerActivity : Activity() {
                 if (guitarra != null) {
                     Log.d("QRScannerActivity", "Guitarra trobada: ${guitarra.marca} ${guitarra.model}")
 
-                    // Verifica que les dades es passin correctament al Bundle
                     Log.d("QRScannerActivity", "Passant dades al bundle: Marca=${guitarra.marca}, Model=${guitarra.model}, Preu=${guitarra.preu}")
 
                     val intent = Intent(this, DetallsGuitarra::class.java)

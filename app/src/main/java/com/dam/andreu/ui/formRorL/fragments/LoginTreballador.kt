@@ -51,9 +51,9 @@ class LoginTreballador : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        workerId = null  // Reiniciar workerId cada vegada que el fragment es mostra
+        workerId = null
         if (!isDialogVisible) {
-            showWorkerIdDialog()  // Mostrar el diàleg per introduir la ID de treballador
+            showWorkerIdDialog()
         }
     }
 

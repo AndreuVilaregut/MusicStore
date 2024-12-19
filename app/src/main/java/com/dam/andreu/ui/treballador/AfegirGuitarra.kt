@@ -28,7 +28,6 @@ class AfegirGuitarra : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_afegir_guitarra)
 
-        // Inicialitzar els components de la UI
         etMarca = findViewById(R.id.et_marca)
         etModel = findViewById(R.id.et_model)
         etAnyFabricacio = findViewById(R.id.et_any_fabricacio)

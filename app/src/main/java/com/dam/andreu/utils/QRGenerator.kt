@@ -10,7 +10,6 @@ import com.google.zxing.qrcode.QRCodeWriter
 
 object QRGenerator {
 
-    // Genera un QR i el retorna com a Bitmap
     fun generarQRCode(text: String): Bitmap {
         val writer = QRCodeWriter()
         val bitMatrix = writer.encode(text, BarcodeFormat.QR_CODE, 512, 512)

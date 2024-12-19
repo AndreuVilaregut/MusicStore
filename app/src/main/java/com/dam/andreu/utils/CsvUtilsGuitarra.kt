@@ -13,13 +13,11 @@ object CsvUtilsGuitarra {
 
     private const val CSV_FILE_NAME = "guitarres.csv"
 
-    // Funció per guardar les guitarres
     fun guardarGuitarres(context: Context, guitarres: List<Guitarra> = emptyList()) {
         val file = File(context.filesDir, CSV_FILE_NAME)
         Log.i("CsvUtilsGuitarra", "CSV file path: ${file.absolutePath}")
 
         try {
-            // Si el fitxer no existeix, el creem
             if (!file.exists()) {
                 try {
                     val created = file.createNewFile()
@@ -36,19 +34,15 @@ object CsvUtilsGuitarra {
                 Log.i("CsvUtilsGuitarra", "CSV file exists at: ${file.absolutePath}")
             }
 
-            // Carreguem les guitarres existents del fitxer
             val existingGuitarres = carregarGuitarres(context).toMutableList()
 
-            // Si el fitxer està buit, creem les guitarres de prova
             if (existingGuitarres.isEmpty()) {
                 val guitarresDeProva = crearGuitarresDeProva(context)
-                existingGuitarres.addAll(guitarresDeProva) // Afegim les guitarres de prova només si la llista està buida
+                existingGuitarres.addAll(guitarresDeProva)
             }
 
-            // Afegim les noves guitarres a la llista
             existingGuitarres.addAll(guitarres)
 
-            // Escrivim totes les guitarres al fitxer CSV
             BufferedWriter(FileWriter(file)).use { writer ->
                 existingGuitarres.forEach { guitarra ->
                     writer.write(formatGuitarraToCsv(guitarra))
@@ -85,7 +79,6 @@ object CsvUtilsGuitarra {
         return guitarres
     }
 
-    // Funció per crear les guitarres de prova si el fitxer està buit
     private fun crearGuitarresDeProva(context: Context): List<Guitarra> {
         val guitarra1 = Guitarra(
             id = 1,
@@ -135,12 +128,10 @@ object CsvUtilsGuitarra {
         return listOf(guitarra1, guitarra2, guitarra3)
     }
 
-    // Funció per editar i guardar una guitarra existent
     fun editarGuitarra(context: Context, guitarraModificada: Guitarra) {
         val file = File(context.filesDir, CSV_FILE_NAME)
         val guitarres = carregarGuitarres(context).toMutableList()
 
-        // Busquem la guitarra per ID i la substituïm amb les dades modificades
         val index = guitarres.indexOfFirst { it.id == guitarraModificada.id }
         if (index != -1) {
             guitarres[index] = guitarraModificada
@@ -149,7 +140,6 @@ object CsvUtilsGuitarra {
             Log.w("CsvUtilsGuitarra", "Guitar ID: ${guitarraModificada.id} not found.")
         }
 
-        // Reescrivim el fitxer CSV amb les guitarres actualitzades
         try {
             BufferedWriter(FileWriter(file)).use { writer ->
                 guitarres.forEach { guitarra ->
@@ -163,12 +153,10 @@ object CsvUtilsGuitarra {
         }
     }
 
-    // Funció per eliminar una guitarra
     fun eliminarGuitarra(context: Context, guitarraId: Int) {
         val file = File(context.filesDir, CSV_FILE_NAME)
         val guitarres = carregarGuitarres(context).toMutableList()
 
-        // Eliminar la guitarra per ID
         val guitarraEliminada = guitarres.removeIf { it.id == guitarraId }
 
         if (guitarraEliminada) {
@@ -177,7 +165,6 @@ object CsvUtilsGuitarra {
             Log.w("CsvUtilsGuitarra", "Guitar ID: $guitarraId not found.")
         }
 
-        // Reescrivim el fitxer CSV amb les guitarres restants
         try {
             BufferedWriter(FileWriter(file)).use { writer ->
                 guitarres.forEach { guitarra ->
@@ -191,7 +178,6 @@ object CsvUtilsGuitarra {
         }
     }
 
-    // Funció per formatar les guitarres en CSV
     private fun formatGuitarraToCsv(guitarra: Guitarra): String {
         return "${guitarra.id}," +
                 "${guitarra.marca}," +
@@ -217,11 +203,9 @@ object CsvUtilsGuitarra {
             }
         }
     }
-    // Funció per parsejar una línia del CSV i convertir-la en un objecte Guitarra
     fun parseCsvToGuitarra(line: String): Guitarra? {
-        val parts = line.split(",") // Separa les dades per comes
+        val parts = line.split(",")
 
-        // Comprova que la línia té totes les parts necessàries
         if (parts.size >= 12) {
             try {
                 return Guitarra(

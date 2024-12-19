@@ -79,7 +79,7 @@ class DetallsGuitarra1 : AppCompatActivity() {
                 AppSingleton.getInstance().editGuitarra(updatedGuitarra, applicationContext)
                 Toast.makeText(this, "Guitarra actualitzada correctament!", Toast.LENGTH_SHORT).show()
 
-                finish() // Tanca aquesta activitat
+                finish()
             }
 
             backButton.setOnClickListener {

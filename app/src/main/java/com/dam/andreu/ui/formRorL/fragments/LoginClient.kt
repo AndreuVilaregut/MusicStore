@@ -42,7 +42,7 @@ class LoginClient : Fragment() {
                 AppSingleton.getInstance().setUser(user)
                 Toast.makeText(
                     requireContext(),
-                    "Login correcte! Usuari desat al Singleton: ${user.nom}",
+                    "Login correcte!: ${user.nom}",
                     Toast.LENGTH_SHORT
                 ).show()
 

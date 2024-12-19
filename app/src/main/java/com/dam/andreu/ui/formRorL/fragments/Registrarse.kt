@@ -43,7 +43,6 @@ class Registrarse : Fragment() {
             val password = passwordEditText.text.toString()
             val confirmPassword = confirmPasswordEditText.text.toString()
 
-            // Verifiquem si les contrasenyes coincideixen
             if (password != confirmPassword) {
                 Toast.makeText(requireContext(), "Les contrasenyes no coincideixen", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -53,7 +52,6 @@ class Registrarse : Fragment() {
                 if (workerCheckBox.isChecked) {
                     showAdminLoginDialog(username, password)
                 } else {
-                    // Registre d'un client
                     val newUser = User(
                         id = (AppSingleton.getInstance().loadUsersFromCsv(requireContext()).size + 1),
                         nom = username,
@@ -61,12 +59,10 @@ class Registrarse : Fragment() {
                         tipus = TipusUsuari.CLIENT
                     )
 
-                    // Desa l'usuari al CSV i al Singleton
                     val users = AppSingleton.getInstance().loadUsersFromCsv(requireContext()).toMutableList()
                     users.add(newUser)
                     AppSingleton.getInstance().saveUsersToCsv(requireContext(), users)
 
-                    // Desa l'usuari al Singleton
                     AppSingleton.getInstance().setUser(newUser)
 
                     Toast.makeText(requireContext(), "Usuari registrat correctament!", Toast.LENGTH_SHORT).show()
