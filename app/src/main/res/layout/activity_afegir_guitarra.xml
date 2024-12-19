@@ -1,0 +1,188 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E4A55"
+    tools:context=".ui.client.AfegirGuitarra">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="Tornar enrere"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Afegir Nova Guitarra"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/detailsScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <!-- Camp de Marca -->
+            <EditText
+                android:id="@+id/et_marca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Marca"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp de Model -->
+            <EditText
+                android:id="@+id/et_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Model"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp d'Any de Fabricació -->
+            <EditText
+                android:id="@+id/et_any_fabricacio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Any de Fabricació"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp de Tipus -->
+            <EditText
+                android:id="@+id/et_tipus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Tipus"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp de Preu -->
+            <EditText
+                android:id="@+id/et_preu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Preu"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp de Color -->
+            <EditText
+                android:id="@+id/et_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Color"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp de Número de Cordes -->
+            <EditText
+                android:id="@+id/et_numero_cordes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Número de Cordes"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp d'Unitats en Estoc -->
+            <EditText
+                android:id="@+id/et_unitats_estoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Unitats en Estoc"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp de Descripció -->
+            <EditText
+                android:id="@+id/et_descripcio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="Descripció"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Camp per la URL de la imatge de la guitarra -->
+            <EditText
+                android:id="@+id/et_imatge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/redounded_background"
+                android:hint="URL de la imatge de la guitarra"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_guardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#4CAF50"
+                android:elevation="8dp"
+                android:text="Afegir Guitarra"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:padding="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

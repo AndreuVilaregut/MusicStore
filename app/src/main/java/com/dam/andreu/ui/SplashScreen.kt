@@ -13,12 +13,17 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dam.andreu.R
 import com.dam.andreu.ui.formRorL.FragmentLorR
+import com.dam.andreu.utils.CsvUtilsGuitarra
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash_screen)
+
+        CsvUtilsGuitarra.guardarGuitarres(this)
+
+        val guitarres = CsvUtilsGuitarra.carregarGuitarres(this)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

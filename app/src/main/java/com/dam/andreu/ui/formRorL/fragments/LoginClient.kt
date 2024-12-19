@@ -13,7 +13,7 @@ import com.dam.andreu.R
 import com.dam.andreu.entitats.TipusUsuari
 import com.dam.andreu.entitats.User
 import com.dam.andreu.singleton.AppSingleton
-import com.dam.andreu.ui.RecycleView
+import com.dam.andreu.ui.client.RecycleView
 
 class LoginClient : Fragment() {
 

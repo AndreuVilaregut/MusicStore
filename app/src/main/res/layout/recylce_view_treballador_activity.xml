@@ -39,7 +39,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/guitarra_recycler_view"
-
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#3E4A55"
@@ -48,7 +47,8 @@
         app:layout_constraintBottom_toTopOf="@id/constraintLayoutFooter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp" />
+        android:padding="8dp" >
+    </androidx.recyclerview.widget.RecyclerView>
 
     <!-- Footer amb botó QR -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,8 +72,8 @@
             android:layout_marginBottom="3dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
-            android:scaleX="2"
-            android:scaleY="2"
+            android:scaleX="2.5"
+            android:scaleY="2.5"
             android:src="@drawable/baseline_person_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/qrScannerButton"
@@ -82,7 +82,24 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
-            android:id="@+id/qrScannerButton"
+            android:id="@+id/afegirGuitarra"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="3dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:scaleX="2.5"
+            android:scaleY="2.5"
+            android:src="@drawable/baseline_add_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/qrScannerButtonOne"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"

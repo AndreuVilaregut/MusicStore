@@ -1,5 +1,6 @@
 package com.dam.andreu.ui.formRorL.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.dam.andreu.R
 import com.dam.andreu.singleton.AppSingleton
+import com.dam.andreu.ui.treballador.RecycleView1
 
 class LoginTreballador : Fragment() {
 
@@ -36,11 +38,14 @@ class LoginTreballador : Fragment() {
 
             if (workerId != null && verifyLogin(workerId!!, username, password)) {
                 Toast.makeText(requireContext(), "Login correcte!", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(requireContext(), RecycleView1::class.java)
+                startActivity(intent)
+                requireActivity().finish()
             } else {
                 Toast.makeText(requireContext(), "ID, nom d'usuari o contrasenya incorrectes", Toast.LENGTH_SHORT).show()
             }
         }
-
         return rootView
     }
 

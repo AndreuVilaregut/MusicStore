@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dam.andreu.entitats.Guitarra
 import com.dam.andreu.R
-import com.dam.andreu.ui.client.DetallsGuitarra
+import com.dam.andreu.ui.treballador.DetallsGuitarra1
 
-class GuitarraAdapterClient(
+class GuitarraAdapterTreballador(
     private val context: Context,
-    private val guitarres: MutableList<Guitarra>
-) : RecyclerView.Adapter<GuitarraAdapterClient.GuitarraViewHolder>() {
+    public val guitarres: MutableList<Guitarra>
+) : RecyclerView.Adapter<GuitarraAdapterTreballador.GuitarraViewHolder>() {
 
     inner class GuitarraViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.guitarra_image)
@@ -29,6 +29,7 @@ class GuitarraAdapterClient(
                 val guitarra = guitarres[adapterPosition]
 
                 val bundle = Bundle().apply {
+                    putInt("ID", guitarra.id)
                     putString("MARCA", guitarra.marca ?: "")
                     putString("MODEL", guitarra.model ?: "")
                     putInt("ANY_FABRICACIO", guitarra.anyFabricacio)
@@ -37,17 +38,18 @@ class GuitarraAdapterClient(
                     putString("COLOR", guitarra.color ?: "")
                     putInt("NUMERO_CORDES", guitarra.numeroCordes)
                     putString("DESCRIPCIO", guitarra.descripcio ?: "")
+                    putInt("UNITATS_ESTOC", guitarra.unitatsEstoc)
                     putString("IMAGE_URL", guitarra.imageUrl ?: "")
+                    putString("QR_IMAGE_PATH", guitarra.qrImagePath ?: "")
                 }
 
-                val intent = Intent(context, DetallsGuitarra::class.java).apply {
+                val intent = Intent(context, DetallsGuitarra1::class.java).apply {
                     putExtra("GUITARRA", bundle)
                 }
 
                 context.startActivity(intent)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GuitarraViewHolder {
