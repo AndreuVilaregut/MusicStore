@@ -43,24 +43,6 @@
 2. **Pantalla de login i registre:** Permet als usuaris iniciar sessió o registrar-se.
 3. **Pantalla d’escaneig QR:** Escanegeu un codi QR per obtenir informació instantània del producte.
 
-## **Contribució**
-
-Les contribucions són benvingudes! Seguiu aquests passos per contribuir:
-1. Fork del repositori.
-2. Creeu una branca nova:
-   ```bash
-   git checkout -b feature/nova-funcionalitat
-   ```
-3. Feu els vostres canvis i feu un commit:
-   ```bash
-   git commit -m "Afegir nova funcionalitat"
-   ```
-4. Feu push a la branca:
-   ```bash
-   git push origin feature/nova-funcionalitat
-   ```
-5. Creeu una pull request.
-
 ## **Llicència**
 
 Aquest projecte està llicenciat sota la [MIT License](LICENSE).
